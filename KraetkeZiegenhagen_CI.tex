@@ -1,0 +1,45 @@
+\documentclass{dtk}
+
+%\usepackage{mdframed} % Boxen
+%\newmdenv [linecolor=black,backgroundcolor=gray!15, frametitle={Punktverteilung},leftmargin=1cm,rightmargin=1cm]{infobox}
+
+%\graphicspath{{./}}
+
+
+\title{Continous Integration mit \LaTeX\ und Jenkins}
+\Author{Martin}{Kraetke}{Leipzig \Email{martin.kraetke@le-tex.de}}
+\Author{Uwe}{Ziegenhagen}{Lokomotivstr. 9 \\ 50733 Köln \Email{ziegenhagen@gmail.com}}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Angeregt durch einen englischen Blog-Artikel\footnote{https://www.pentapie.com/latex-meets-cicd/} möchten wir den Begriff \enquote{Continous Integration} vorstellen und zeigen, wie man dieses Konzept auf \LaTeX-Workflows anwenden kann.
+\end{abstract}
+
+\section{Einführung}
+
+Da nicht vorauszusetzen ist, dass jeder Leser mit dem Stichwort aus dem Titel etwas anfangen kann, soll an dieser Stelle eine kurze Einführung gegeben werden. Die Wikipedia\footnote{\url{https://de.wikipedia.org/wiki/Kontinuierliche_Integration}} beschreibt \enquote{Contious Integration} -- im folgenden durch \enquote{CI} abgekürzt -- wie folgt:
+
+\begin{quote}
+Kontinuierliche Integration (auch fortlaufende oder permanente Integration; englisch \textit{continuous integration}) ist ein Begriff aus der Software-Entwicklung, der den Prozess des fortlaufenden Zusammenfügens von Komponenten zu einer Anwendung beschreibt. Das Ziel der kontinuierlichen Integration ist die Steigerung der Softwarequalität. Typische Aktionen sind das Übersetzen und Linken der Anwendungsteile, prinzipiell können aber auch beliebige andere Operationen zur Erzeugung abgeleiteter Informationen durchgeführt werden. Üblicherweise wird dafür nicht nur das Gesamtsystem neu gebaut, sondern es werden auch automatisierte Tests durchgeführt und Softwaremetriken zur Messung der Softwarequalität erstellt. Der gesamte Vorgang wird automatisch ausgelöst durch Einchecken in die Versionsverwaltung.
+
+Eine vereinfachte Variante der kontinuierlichen Integration -- und häufig ihre Vorstufe -- ist der Nightly Build (nächtlicher Erstellungsprozess). In der Praxis trifft man auch auf kontinuierliche Integration, gepaart mit einem Nightly Build, um die Vorteile beider Systeme zu kombinieren.
+\end{quote}
+
+Zusammenfassend können wir sagen, dass CI einen Prozess beschreibt, der kontinuierlich prüft, ob Bestandteile einer Software die erforderliche Qualität besitzen. Was hat das nun mit \LaTeX\ zu tun? 
+
+Größere \LaTeX-Projekte, insbesondere dann wenn mehrere Autoren daran arbeiten, haben ähnliche Probleme wie Softwareentwickler: nicht sofort ist klar, was eine bestimmte Änderung im Code (das Laden eines neuen Paketes) bewirkt und ob das Gesamtprojekt noch erfolgreich in ein PDF kompiliert werden kann. Hier kann CI beispielsweise dafür sorgen, dass in der finalen Versionskontrolle stets eine geprüfte und damit fehlerfreie Version des Projekts abgelegt wird.
+
+\include{martin}
+
+\include{uwe}
+
+\section{Fazit}
+
+
+
+
+\end{document}

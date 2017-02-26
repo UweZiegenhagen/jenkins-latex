@@ -1,0 +1,18 @@
+%!TeX root = KraetkeZiegenhagen_CI.tex
+\section{Jenkins -- Installation und Nutzung}
+
+In diesem Abschnitt möchten wir kurz zeigen, wie man Jenkins installieren und konfigurieren muss.
+
+Jenkins bildet die Softwarebasis, die wir zur Steuerung des Build-Prozesses nutzen werden und wurde ursprünglich unter dem Namen \enquote{Hudson} bei Sun Microsystems entwickelt. Jenkins benötigt Java -- es basiert auf den sogenannten \enquote{Enterprise Java Beans} und wird über den Webbrowser bedient. 
+
+Im folgenden beschreibe ich das Setup unter Ubuntu, es sind aber auch Installationspakete für Windows, Mac OS X und diverse Linux-Varianten verfügbar.
+
+Die eigentliche Installation verläuft unspektakulär, siehe das folgende Listing.
+
+\begin{lstlisting}{caption={jenkins Installation},label={lis:install}}
+sudo apt-get update
+sudo apt-get install jenkins
+\end{lstlisting}
+
+Nach der Installation kann dann über \url{http://127.0.0.1:8080} beziehungsweise die entsprechende URL des Installationsrechners die jenkins-Oberfläche aufgerufen werden.
+
