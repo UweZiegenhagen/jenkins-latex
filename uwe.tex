@@ -58,33 +58,44 @@ Bei der Zusammenarbeit hat sich gezeigt, dass Tippfehler bei der Eingabe oder un
 
 Hier bietet sich Jenkins an, um die Kompilierung automatisch durchführen zu lassen. Als Hardware dient ein Intel NUC mit relativ schwachem Celeron N2820 und acht Gigabyte RAM, der unter Ubuntu-Linux läuft und über ein aktuelles \TeX\ Live 2016 verfügt.
 
-In den allgemeinen Einstellungen legt man den Projektnamen fest sowie den Pfad zum GitHub-Projekt.
+In den allgemeinen Einstellungen, siehe Abbildung \ref{fig:jcommon}, legt man den Projektnamen fest sowie den Pfad zum GitHub-Projekt.
 
 \begin{figure}
 \fbox{\includegraphics[width=\textwidth]{Images/lfgw-01}}
-\caption{Allgemeine Einstellungen}\label{fig:NewJob}
+\caption{Allgemeine Einstellungen}\label{fig:jcommon}
 \end{figure}
 
-
-Unter \enquote{Source-Code-Management} wird dann nochmal der Zugang zum Projekt definiert, neben \texttt{git} unterstützt GitHub auch \texttt{Subversion} für den Zugriff auf die git-Repositories.
+Unter \enquote{Source-Code-Management} (Abbildung \ref{fig:jgit}) wird dann nochmal der Zugang zum Projekt definiert, neben \texttt{git} unterstützt GitHub auch \texttt{Subversion} für den Zugriff auf die git-Repositories.
 
 
 \begin{figure}
 \fbox{\includegraphics[width=\textwidth]{Images/lfgw-02}}
-\caption{Zugang zum Repository}\label{fig:NewJob}
+\caption{Zugang zum Repository}\label{fig:jgit}
 \end{figure}
 
-Um den Build-Job auszulösen gibt es verschiedene Möglichkeiten. Wir haben uns für das zeitgestützte Anstoßen entschieden, über eine \texttt{CRON} Syntax legen wir fest, dass täglich um Mitternacht der Build erfolgen soll. 
+Um den Build-Job auszulösen gibt es verschiedene Möglichkeiten. Wir haben uns für das zeitgestützte Anstoßen entschieden (Details siehe Abbildung \ref{fig:jcron}), über eine \texttt{CRON} Syntax legen wir fest, dass täglich um Mitternacht der Build erfolgen soll. 
 
 
 \begin{figure}
 \fbox{\includegraphics[width=\textwidth]{Images/lfgw-03}}
-\caption{Zeitgesteuerte Auslösung}\label{fig:NewJob}
+\caption{Zeitgesteuerte Auslösung}\label{fig:jcron}
 \end{figure}
 
 
-Unter \enquote{Buildverfahren} schließlich wird definiert, was für die Übersetzung geschehen muss, in unserem Fall lua\LaTeX\ gefolgt von \texttt{biber} und anschließendem erneuten lua\LaTeX. Alle drei Aufrufe schreiben ihre Ergebnisse in ein separates Verzeichnis, um nicht Probleme mit den Kompilierungen der einzelnen Co-Autorinnen und -Autoren zu verursachen.
+Unter \enquote{Buildverfahren} schließlich wird definiert, was für die Übersetzung geschehen muss, in unserem Fall lua\LaTeX\ gefolgt von \texttt{biber} und anschließendem erneuten lua\LaTeX. Alle drei Aufrufe schreiben ihre Ergebnisse in ein separates Verzeichnis, um nicht Probleme mit den Kompilierungen der einzelnen Co-Autorinnen und -Autoren zu verursachen. Abbildung \ref{fig:jcompile} zeigt die entsprechenden Aufrufe.
+
+
+\begin{figure}
+\fbox{\includegraphics[width=\textwidth]{Images/lfgw-04}}
+\caption{Die eigentliche Übersetzung}\label{fig:jcompile}
+\end{figure}
+
 
 Im Anschluss daran werden über den \texttt{git commit} Befehl die Änderungen (nur am PDF, da die \TeX-Dateien hier nicht verändert werden) in das Repository geschrieben.
 
+Der finale Schritt (siehe Abbildung \ref{fig:backGitHub}) besteht dann darin, das geänderte PDF wieder zurück nach GitHub zu spielen.
 
+\begin{figure}
+\fbox{\includegraphics[width=\textwidth]{Images/lfgw-05}}
+\caption{Der Weg zurück zu GitHub}\label{fig:backGitHub}
+\end{figure}
